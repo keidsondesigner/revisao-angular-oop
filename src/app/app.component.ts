@@ -5,6 +5,8 @@ import { Aluno } from './fundamentos/01classes/aluno';
 import { ClienteNormal } from './modelos/clienteNormal';
 import { QuartoSimples } from './modelos/quartoSimples';
 import { Reserva } from './modelos/reserva';
+import { QuartoLuxo } from './modelos/quartoLuxo';
+import { ClienteVip } from './modelos/clienteVip';
 
 @Component({
   selector: 'app-root',
@@ -42,6 +44,12 @@ export class AppComponent implements OnInit {
     const reserva = new Reserva(cliente, quarto, 3);
     console.log(reserva);
     console.log(reserva.getDetalhesReserva());
+
+    const cliente2 =  new ClienteVip('Karol', 'VIP');
+    const quarto2 = new QuartoLuxo();
+    const reserva2 = new Reserva(cliente2, quarto2, 15);
+    console.log(reserva2);
+    console.log(reserva2.getDetalhesReserva());
   }
 }
 

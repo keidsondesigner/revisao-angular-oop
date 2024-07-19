@@ -1,7 +1,7 @@
 import { QuartoAbstract } from "./quarto";
 
 export class QuartoLuxo extends QuartoAbstract {
-  constructor(tipo: string, valor: number) {
-    super(tipo = 'Quarto Luxo', valor = 400);
+  constructor() {
+    super('Quarto Luxo', 400); // setando os valores de forma dinâmica (tipo, valor)
   }
 }
