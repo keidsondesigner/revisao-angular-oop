@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MinhaPrimeiraClass } from './fundamentos/01classes/minhaPrimeiraClass';
 import { MinhaSegundaClass } from './fundamentos/01classes/minhaSegundaCLass';
 import { Aluno } from './fundamentos/01classes/aluno';
+import { ClienteNormal } from './modelos/clienteNormal';
+import { QuartoSimples } from './modelos/quartoSimples';
+import { Reserva } from './modelos/reserva';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +35,13 @@ export class AppComponent implements OnInit {
     console.log(aluno2);
     aluno2.setIdade(21);
     console.log(aluno2.getIdade());
+
+    console.log('-------------------------Projeto Reserva de Quarto-------------------------');
+    const cliente =  new ClienteNormal('João', 'NORMAL');
+    const quarto = new QuartoSimples();
+    const reserva = new Reserva(cliente, quarto, 3);
+    console.log(reserva);
+    console.log(reserva.getDetalhesReserva());
   }
 }
 
