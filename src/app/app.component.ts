@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MinhaPrimeiraClass } from './fundamentos/01classes/minhaPrimeiraClass';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'fundamentos-oop';
+
+  ngOnInit() {
+    const person1 = new MinhaPrimeiraClass('John', 30, 'Programmer');
+    console.log(person1);
+    console.log(person1.getAge());
+  }
 }
 
 
