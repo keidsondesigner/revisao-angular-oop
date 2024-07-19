@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MinhaPrimeiraClass } from './fundamentos/01classes/minhaPrimeiraClass';
+import { MinhaSegundaClass } from './fundamentos/01classes/minhaSegundaCLass';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,12 @@ export class AppComponent implements OnInit {
     const person1 = new MinhaPrimeiraClass('John', 30, 'Programmer');
     console.log(person1);
     console.log(person1.getAge());
+
+    console.log('-------------------------');
+
+    const person2 = new MinhaSegundaClass('Keidson', 25, 'Designer', '123456789');
+    console.log(person2);
+    console.log(person2.getInfoUser());
   }
 }
 

@@ -21,6 +21,10 @@ export class MinhaPrimeiraClass {
     return this.age;
   }
 
+  public getInfoUser() {
+    return this.name + ' ' + this.age + ' ' + this.position;
+  }
+
   public setPosition(position: string) {
     this.position = position;
   }
