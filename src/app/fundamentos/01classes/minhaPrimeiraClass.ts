@@ -9,6 +9,22 @@ export class MinhaPrimeiraClass {
     this.position = position;
   }
 
+  // Quando usamos o get e set, na frente dos meus métodos
+  // posso chamar o método como propriedade, sem usar parentenses "()"
+
+  // exemplo:
+  // const person1 = new MinhaPrimeiraClass('John', 30, 'Programmer');
+  // person1.getName;
+  // person1.setName = 'Karol';
+
+  // public get getName() {
+  //   return this.name;
+  // }
+
+  // public set setName(name: string) {
+  //   this.name = name;
+  // }
+
   public getPosition() {
     return this.position;
   }
