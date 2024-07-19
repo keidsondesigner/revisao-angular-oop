@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MinhaPrimeiraClass } from './fundamentos/01classes/minhaPrimeiraClass';
 import { MinhaSegundaClass } from './fundamentos/01classes/minhaSegundaCLass';
+import { Aluno } from './fundamentos/01classes/aluno';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,16 @@ export class AppComponent implements OnInit {
     const person2 = new MinhaSegundaClass('Keidson', 25, 'Designer', '123456789');
     console.log(person2);
     console.log(person2.getInfoUser());
+
+    console.log('-------------------------');
+    // implentando uma interface
+    const aluno = new Aluno('João', 'Silva', 20);
+    console.log(aluno);
+
+    const aluno2 = new Aluno('Pedro', 'Tavares', 18);
+    console.log(aluno2);
+    aluno2.setIdade(21);
+    console.log(aluno2.getIdade());
   }
 }
 
