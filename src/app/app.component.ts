@@ -70,6 +70,20 @@ export class AppComponent implements OnInit {
   }
 
 
+  criarCliente() {
+    if(this.cliente.tipo === 'normal') {
+      this.cliente = new ClienteNormal(this.cliente.nome, 'Normal');
+      this.tipoQuarto = 'Simples';
+    } else if(this.cliente.tipo === 'vip') {
+      this.cliente = new ClienteVip(this.cliente.nome, 'VIP');
+      this.tipoQuarto = 'Luxo';
+    }
+
+    this.hotelService.setCliente(this.cliente);
+    this.escolherQuarto();
+  }
+
+
   escolherQuarto() {
     if(this.tipoQuarto === 'Simples') {
       this.quarto = new QuartoSimples();
