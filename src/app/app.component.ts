@@ -70,6 +70,18 @@ export class AppComponent implements OnInit {
   }
 
 
+  fazerReserva() {
+    this.criarCliente();
+
+    const cliente = this.hotelService.getCliente();
+    const quarto = this.hotelService.getQuarto();
+    const reserva = new Reserva(cliente, quarto, this.qtdDias);
+
+    this.hotelService.setReserva(reserva);
+    console.log('Reservas: ', this.hotelService.getReservas());
+  }
+
+
   criarCliente() {
     if(this.cliente.tipo === 'normal') {
       this.cliente = new ClienteNormal(this.cliente.nome, 'Normal');
