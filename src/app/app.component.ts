@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
   qtdDias: number = 0;
 
 
-  constructor(private hotelService: HotelService) { }
+  constructor(public hotelService: HotelService) { }
 
 
   ngOnInit() {
