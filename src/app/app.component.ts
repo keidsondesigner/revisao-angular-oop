@@ -7,6 +7,9 @@ import { QuartoSimples } from './modelos/quartoSimples';
 import { Reserva } from './modelos/reserva';
 import { QuartoLuxo } from './modelos/quartoLuxo';
 import { ClienteVip } from './modelos/clienteVip';
+import { Quarto } from './interfaces/quarto.interface';
+import { HotelService } from './services/hotel.service';
+import { Cliente } from './interfaces/cliente.interface';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +19,20 @@ import { ClienteVip } from './modelos/clienteVip';
 })
 export class AppComponent implements OnInit {
   title = 'fundamentos-oop';
+
+  cliente: Cliente = {
+    nome: '',
+    tipo: 'normal',
+    msgParabens: () => ''
+  }
+
+  quarto!: Quarto;
+  tipoQuarto = '';
+  qtdDias: number = 0;
+
+
+  constructor(private hotelService: HotelService) { }
+
 
   ngOnInit() {
     const person1 = new MinhaPrimeiraClass('John', 30, 'Programmer');
@@ -51,6 +68,18 @@ export class AppComponent implements OnInit {
     console.log(reserva2);
     console.log(reserva2.getDetalhesReserva());
   }
+
+
+  escolherQuarto() {
+    if(this.tipoQuarto === 'Simples') {
+      this.quarto = new QuartoSimples();
+    } else if(this.tipoQuarto === 'Luxo') {
+      this.quarto = new QuartoLuxo();
+    }
+
+    this.hotelService.setQuarto(this.quarto);
+  }
+
 }
 
 
