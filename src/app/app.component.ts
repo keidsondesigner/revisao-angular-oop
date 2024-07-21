@@ -20,12 +20,9 @@ import { Cliente } from './interfaces/cliente.interface';
 export class AppComponent implements OnInit {
   title = 'fundamentos-oop';
 
-  cliente: Cliente = {
-    nome: '',
-    tipo: 'normal',
-    msgParabens: () => ''
-  }
-
+  clienteInput = { nome: ''};
+  cliente!: Cliente;
+  tipoCliente = 'normal';
   quarto!: Quarto;
   tipoQuarto = '';
   qtdDias: number = 0;
@@ -79,15 +76,20 @@ export class AppComponent implements OnInit {
 
     this.hotelService.setReserva(reserva);
     console.log('Reservas: ', this.hotelService.getReservas());
+
+    // limpar campos do form
+    this.clienteInput.nome = '';
+    this.tipoCliente = '';
+    this.qtdDias = 0;
   }
 
 
   criarCliente() {
-    if(this.cliente.tipo === 'normal') {
-      this.cliente = new ClienteNormal(this.cliente.nome, 'Normal');
+    if(this.tipoCliente === 'normal') {
+      this.cliente = new ClienteNormal(this.clienteInput.nome, 'Normal');
       this.tipoQuarto = 'Simples';
-    } else if(this.cliente.tipo === 'vip') {
-      this.cliente = new ClienteVip(this.cliente.nome, 'VIP');
+    } else if(this.tipoCliente === 'vip') {
+      this.cliente = new ClienteVip(this.clienteInput.nome, 'VIP');
       this.tipoQuarto = 'Luxo';
     }
 

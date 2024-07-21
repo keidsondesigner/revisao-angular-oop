@@ -12,11 +12,11 @@
   <h2>Detalhes da reserva</h2>
   <div class="form-group">
     <label>Nome:</label>
-    <input [(ngModel)]="cliente.nome" class="form-control" placeholder="Nome do cliente">
+    <input [(ngModel)]="clienteInput.nome" class="form-control" placeholder="Nome do cliente">
   </div>
   <div class="form-group">
     <label>Tipo:</label>
-    <select [(ngModel)]="cliente.tipo" class="form-control">
+    <select [(ngModel)]="tipoCliente" class="form-control">
       <option value="normal">Normal</option>
       <option value="vip">VIP</option>
     </select>
@@ -50,4 +50,8 @@
       </tbody>
     </table>
   </div>
+</section>
+
+<section>
+  <app-conta-bancaria></app-conta-bancaria>
 </section>
